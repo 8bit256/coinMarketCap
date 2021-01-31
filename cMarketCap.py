@@ -14,7 +14,8 @@ headers = {
 # make api request and convert to json
 listings_data = requests.get(listings_api,headers=headers).json()
 listings_data = listings_data['data']
-#print(listings_data)
+print(listings_data[0])
+
 
 table = PrettyTable()
 table.field_names = ['Name', 'Symbol', 'Price', 'Volume', 'MarketCap', 'Change 1h',
@@ -38,4 +39,4 @@ for coin in listings_data:
 
 table.sortby = table.field_names[6]
 table.reversesort = True
-print(table)
+# print(table)
